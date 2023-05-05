@@ -8,6 +8,6 @@
     <PackageReference Include="System.Data.Common" Version="4.3.0"></PackageReference>
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1"></PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.20" />
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.70" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.180" />
   </ItemGroup>
 </Project>
