@@ -18,7 +18,7 @@ namespace dot101
                 dbName = args[0];
             }
 
-            DbConnection conn = new MySqlConnection(@"server=localhost;userid=root;password=root;");
+            DbConnection conn = new MySqlConnection(@"server=localhost;userid=dragon;password=Dragon_786;");
             //DbConnection conn = new OracleConnection(@"data source=//localhost:1521;user id=AU_CUSTOMER_PORTAL_MSME;password=Pt#24msmE;");
 
             Scanner scanner = new Scanner(conn);
@@ -38,20 +38,21 @@ namespace dot101
             conn.Close();
         }
 
-        private static void PrintDB(Scanner scanner, string db) {
+        private static void PrintDB(Scanner scanner, string db)
+        {
             foreach (var tab in scanner.GetTables(db))
-                    {
-                        Console.WriteLine("\t{0}", tab);
-                        foreach (var col in scanner.GetTableColumns(db, tab))
-                        {
-                            Console.WriteLine("\t\t{0}", col);
-                        }
+            {
+                Console.WriteLine("\t{0}", tab);
+                foreach (var col in scanner.GetTableColumns(db, tab))
+                {
+                    Console.WriteLine("\t\t{0}", col);
+                }
 
-                        foreach (var reference in scanner.GetTableReferences(db, tab))
-                        {
-                            Console.WriteLine("\t\t\t{0}", reference);
-                        }
-                    }
+                foreach (var reference in scanner.GetTableReferences(db, tab))
+                {
+                    Console.WriteLine("\t\t\t{0}", reference);
+                }
+            }
         }
 
     }
